@@ -88,6 +88,7 @@ const use_google_bot = [
 'couriermail.com.au',
 'dailytelegraph.com.au',
 'dn.se',
+"fd.nl",
 'goldcoastbulletin.com.au',
 'haaretz.co.il',
 'haaretz.com',
@@ -145,7 +146,7 @@ var blockedRegexes = {
 'sloanreview.mit.edu': /.+\.tinypass\.com\/.+/,
 'spectator.co.uk': /.+\.tinypass\.com\/.+/,
 'spectator.com.au': /.+\.tinypass\.com\/.+/,
-'thecourier.com.au': /.+cdn-au\.piano\.io\/api\/tinypass.+\.js/, 
+'thecourier.com.au': /.+cdn-au\.piano\.io\/api\/tinypass.+\.js/,
 'thedailybeast.com': /.+\.tinypass\.com\/.+/,
 'theglobeandmail.com': /theglobeandmail\.com\/pb\/resources\/scripts\/build\/chunk-bootstraps\/.+\.js/,
 'thenation.com': /thenation\.com\/.+\/paywall-script\.php/,
@@ -285,7 +286,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
 				if (details.url.indexOf('meter.bostonglobe.com/js/') !== -1 && (header_referer === 'https://www.bostonglobe.com/'
 						|| header_referer.indexOf('/?p1=BGHeader_') !== -1  || header_referer.indexOf('/?p1=BGMenu_') !== -1)) {
 					chrome.webRequest.handlerBehaviorChanged(function () {});
-					break;			
+					break;
 				} else if (header_referer.indexOf('theglobeandmail.com') !== -1 && !(header_referer.indexOf('/article-') !== -1)) {
 					chrome.webRequest.handlerBehaviorChanged(function () {});
 					break;
